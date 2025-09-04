@@ -72,7 +72,7 @@ function "labels" {
 }
 
 target "_default_attributes" {
-  labels = labels(test)
+  labels = labels(testing)
   args = {
     DB = "${DB}"
     CARGO_PROFILE = "${CARGO_PROFILE}"
