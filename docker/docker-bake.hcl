@@ -72,7 +72,7 @@ function "labels" {
 }
 
 target "_default_attributes" {
-  labels = labels()
+  labels = labels(test)
   args = {
     DB = "${DB}"
     CARGO_PROFILE = "${CARGO_PROFILE}"
@@ -96,7 +96,7 @@ target "debian" {
 target "debian-multi" {
   inherits = ["debian"]
   platforms = ["linux/amd64", "linux/arm64", "linux/arm/v7", "linux/arm/v6"]
-//  tags = generate_tags("", "")
+  tags = generate_tags("", "")
   output = [join(",", flatten([["type=registry"], image_index_annotations()]))]
 }
 
